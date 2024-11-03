@@ -1,39 +1,29 @@
 1. Write a program non-recursive and recursive program to calculate Fibonacci numbers
 and analyze their time and space complexity.
 # Non-Recursive (Iterative) Fibonacci Function
-def fibonacci_iterative(n):
- if n <= 0:
- return 0
- elif n == 1:
- return 1
 
- a, b = 0, 1
- for _ in range(2, n + 1):
- a, b = b, a + b
+def fib_it(n):
+  if n<=1:
+    return n;
 
- return b
+  a,b=0,1
+  for _ in range(2,n+1):
+    a,b=b,a+b
+  return b;
+
+n=3;
+print("fibonacci number at position ",n,"is: ",fib_it(n))
+
 # Recursive Fibonacci Function
-def fibonacci_recursive(n):
- if n <= 0:
- return 0
- elif n == 1:
- return 1
- else:
- return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 
-   # Example usage
-if __name__ == "__main__":
- n = int(input("Enter a positive integer to compute Fibonacci: "))
+def fib_rec(n):
+  if n<=1:
+    return n
 
- # Using Iterative Method
- print(f"Fibonacci (Iterative) of {n}: {fibonacci_iterative(n)}")
+  return fib_rec(n-1)+fib_rec(n-2);
 
- # Using Recursive Method
- print(f"Fibonacci (Recursive) of {n}: {fibonacci_recursive(n)}")
-Output:
-Enter a positive integer to compute Fibonacci: 6
-Fibonacci (Iterative) of 6: 8
-Fibonacci (Recursive) of 6: 8
+n=int(input("Enter the number"))
+print(f"ans is :{fib_rec(n)}")
 
   **************************************************************************************************************************************************
 
